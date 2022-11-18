@@ -17,6 +17,34 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+
+  // creating elements
+  const card = document.createElement('div');
+  const headline = document.createElement('div');
+  const author = document.createElement('div');
+  const imgContainer = document.createElement('div');
+  const authorPhoto = document.createElement('img');
+  const authorName = document.createElement('span');
+
+  // adding classes, src, and textContent
+  card.classList.add('card');
+  headline.classList.add('headline');
+  headline.textContent = article.headline;
+  author.classList.add('author');
+  imgContainer.classList.add('img-container');
+  authorPhoto.src = article.authorPhoto;
+  authorName.textContent = `By ${article.authorName}`;
+
+  // creating heirarchy
+  card.appendChild(headline);
+  card.appendChild(author);
+  author.appendChild(imgContainer);
+  imgContainer.appendChild(authorPhoto);
+  author.appendChild(authorName);
+
+  // returning card element
+  return card;
+  
 }
 
 const cardAppender = (selector) => {
