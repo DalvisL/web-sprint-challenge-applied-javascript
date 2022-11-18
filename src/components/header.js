@@ -13,6 +13,25 @@ const Header = (title, date, temp) => {
   //
   // creating elements
   const header = document.createElement('div');
+  const spanDate = document.createElement('span');
+  const h1 = document.createElement('h1');
+  const spanTemp = document.createElement('span');
+
+  // adding class, text content
+  header.classList.add('header');
+  spanDate.classList.add('date');
+  spanDate.textContent = date;
+  h1.textContent = title;
+  spanTemp.classList.add('temp');
+  spanTemp.textContent = temp;
+
+  // creating heirarchy
+  header.appendChild(spanDate);
+  header.appendChild(h1);
+  header.appendChild(spanTemp);
+
+  // return
+  return header;
 }
 
 const headerAppender = (selector) => {
