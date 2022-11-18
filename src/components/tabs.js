@@ -13,6 +13,24 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+  // creating elements
+  const topicDiv = document.createElement('div');
+
+  // adding classes
+  topicDiv.classList.add('topics');
+
+  // looping over array to create heirarchy
+
+  topics.forEach(topic => {
+    const tab = document.createElement('div');
+    tab.classList.add('tab');
+    tab.textContent = topic
+    topicDiv.appendChild(tab);
+  });
+
+  console.log(topics);
+  // returning element
+  return topicDiv;
 }
 
 const tabsAppender = (selector) => {
